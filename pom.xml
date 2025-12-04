@@ -16,12 +16,8 @@
     <!-- ✅ GLOBAL PROPERTIES -->
     <properties>
         <docker.image.prefix>kammana</docker.image.prefix>
-
-        <!-- ✅ JAVA VERSION FIX -->
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-
-        <!-- ✅ ENCODING FIX -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -34,7 +30,6 @@
             <version>5.1.2</version>
         </dependency>
 
-        <!-- ✅ UPDATED JUNIT -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -59,7 +54,7 @@
                 </configuration>
             </plugin>
 
-            <!-- ✅ WAR PLUGIN FIX (CRITICAL FOR YOUR ERROR) -->
+            <!-- ✅ WAR PLUGIN (JAVA 11 COMPATIBLE) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -69,7 +64,7 @@
         </plugins>
     </build>
 
-    <!-- ✅ NEXUS DEPLOY CONFIG -->
+    <!-- ✅ NEXUS DEPLOYMENT -->
     <distributionManagement>
 
         <snapshotRepository>
@@ -84,6 +79,13 @@
 
     </distributionManagement>
 
-    <!-- ✅ PLUGIN REPOSITORIES (SECURED) -->
+    <!-- ✅ PLUGIN REPOSITORIES (PROPERLY CLOSED) -->
     <pluginRepositories>
         <pluginRepository>
+            <id>maven-central</id>
+            <name>Maven Central</name>
+            <url>https://repo1.maven.org/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
